@@ -12,21 +12,21 @@ Register a new user
     ${user}     Factory User
 
     Go To Signup Form
-    Fill Signup Form    ${user}
+    Fill Signup Form            ${user}
     Submit Signup Form
     User Should Be Registered
 
 Duplicated user
     [Tags]      attempt_signup
 
-    ${user}                     Factory User
+    ${user}     Factory User
 
     Add User From Database      ${user}
 
     Go To Signup Form
-    Fill Signup Form    ${user}
+    Fill Signup Form            ${user}
     Submit Signup Form
-    Modal Content Should Be         Já temos um usuário com o e-mail informado.
+    Modal Content Should Be     Já temos um usuário com o e-mail informado.
 
 Wrong email
     [Tags]      attempt_signup
@@ -34,18 +34,18 @@ Wrong email
     ${user}     Factory Wrong Email
 
     Go To Signup Form
-    Fill Signup Form    ${user}
+    Fill Signup Form            ${user}
     Submit Signup Form
-    Alert Span Should Be    O email está estranho
+    Alert Span Should Be        O email está estranho
 
-Required Fields
+Required Fields Signup
     [Tags]          attempt_signup      reqf
 
-    @{expected_alerts}      Create List
-    ...                     Cadê o seu nome?
-    ...                     E o sobrenome?
-    ...                     O email é importante também!
-    ...                     Agora só falta a senha!
+    @{expected_alerts}          Create List
+    ...                         Cadê o seu nome?
+    ...                         E o sobrenome?
+    ...                         O email é importante também!
+    ...                         Agora só falta a senha!
 
     Go To Signup Form
     Submit Signup Form
@@ -76,6 +76,6 @@ Signup With Short Pass
     ...         email=cintiafelippe@gmail.com       password=${short_pass}
 
     Go To Signup Form
-    Fill Signup Form  ${user}
+    Fill Signup Form            ${user}
     Submit Signup Form
-    Alert Span Should Be  Informe uma senha com pelo menos 6 caracteres
+    Alert Span Should Be        Informe uma senha com pelo menos 6 caracteres
