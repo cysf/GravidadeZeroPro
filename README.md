@@ -9,6 +9,7 @@ Este projeto é referente à conclusao do curso de Robot Framework, módulo Grav
 - Instalar o Robot 4:
 		- No console, digitar: 
 		`pip install robotframework`
+		
 		- Para confirmar se foi instalado corretamente:
 		`robot --version`
 
